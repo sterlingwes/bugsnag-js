@@ -52,7 +52,8 @@ module.exports = {
         testsForPackage('plugin-react-native-global-error-handler'),
         testsForPackage('plugin-react-native-event-sync'),
         testsForPackage('plugin-react-native-session'),
-        testsForPackage('plugin-react-navigation')
+        testsForPackage('plugin-react-navigation'),
+        testsForPackage('plugin-react-native-navigation')
       ],
       setupFiles: [
         require.resolve('react-native/Libraries/Core/setUpGlobals.js'),

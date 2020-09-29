@@ -5,6 +5,7 @@
 ### Added
 
 - (plugin-react-navigation): New plugin that integrates with React Navigation. [#1067](https://github.com/bugsnag/bugsnag-js/pull/1067)
+- (plugin-react-native-navigation): New plugin that integrates with React Native Navigation. [#1065](https://github.com/bugsnag/bugsnag-js/pull/1065)
 
 ### Changed
 
