@@ -138,8 +138,7 @@ services:
         aliases:
           - maze-runner
     volumes:
-      - ./build:/app/build
-      - ./test:/app/test
+      - ./:/app/
 
   react-native-maze-runner:
     build:
