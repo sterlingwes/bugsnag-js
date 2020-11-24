@@ -28,51 +28,51 @@ steps:
         command: ["-e", "koa.feature", "-e", "koa-1x.feature", "-e", "webpack.feature"]
     env:
       NODE_VERSION: "4"
-
-  - label: ':node: Node 6'
-    depends_on: "node-maze-runner-image"
-    timeout_in_minutes: 30
-    plugins:
-      docker-compose#v3.7.0:
-        run: node-maze-runner
-        use-aliases: true
-        verbose: true
-        command: ["-e", "koa.feature", "-e", "koa-1x.feature"]
-    env:
-      NODE_VERSION: "6"
-
-  - label: ':node: Node 8'
-    depends_on: "node-maze-runner-image"
-    timeout_in_minutes: 30
-    plugins:
-      docker-compose#v3.7.0:
-        run: node-maze-runner
-        use-aliases: true
-        verbose: true
-    env:
-      NODE_VERSION: "8"
-
-  - label: ':node: Node 10'
-    depends_on: "node-maze-runner-image"
-    timeout_in_minutes: 30
-    plugins:
-      docker-compose#v3.7.0:
-        run: node-maze-runner
-        use-aliases: true
-        verbose: true
-    env:
-      NODE_VERSION: "10"
-
-  - label: ':node: Node 12'
-    depends_on: "node-maze-runner-image"
-    timeout_in_minutes: 30
-    plugins:
-      docker-compose#v3.7.0:
-        run: node-maze-runner
-        use-aliases: true
-        verbose: true
-    env:
-      NODE_VERSION: "12"
+#
+#  - label: ':node: Node 6'
+#    depends_on: "node-maze-runner-image"
+#    timeout_in_minutes: 30
+#    plugins:
+#      docker-compose#v3.7.0:
+#        run: node-maze-runner
+#        use-aliases: true
+#        verbose: true
+#        command: ["-e", "koa.feature", "-e", "koa-1x.feature"]
+#    env:
+#      NODE_VERSION: "6"
+#
+#  - label: ':node: Node 8'
+#    depends_on: "node-maze-runner-image"
+#    timeout_in_minutes: 30
+#    plugins:
+#      docker-compose#v3.7.0:
+#        run: node-maze-runner
+#        use-aliases: true
+#        verbose: true
+#    env:
+#      NODE_VERSION: "8"
+#
+#  - label: ':node: Node 10'
+#    depends_on: "node-maze-runner-image"
+#    timeout_in_minutes: 30
+#    plugins:
+#      docker-compose#v3.7.0:
+#        run: node-maze-runner
+#        use-aliases: true
+#        verbose: true
+#    env:
+#      NODE_VERSION: "10"
+#
+#  - label: ':node: Node 12'
+#    depends_on: "node-maze-runner-image"
+#    timeout_in_minutes: 30
+#    plugins:
+#      docker-compose#v3.7.0:
+#        run: node-maze-runner
+#        use-aliases: true
+#        verbose: true
+#    env:
+#      NODE_VERSION: "12"
 
   - label: ':node: Node 14'
     depends_on: "node-maze-runner-image"
