@@ -20,7 +20,3 @@ unless fixtures.include?(current_fixture)
       - #{fixtures.join("\n  - ")}
   ERROR
 end
-
-When('I run the React Native CLI service interactively') do
-  step("I run the service 'react_native_cli' interactively")
-end
