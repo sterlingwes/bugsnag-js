@@ -64,9 +64,10 @@ steps:
     async: true
 
   - label: 'Trigger React Native pipeline'
-    depends_on:
-      - 'publish-js'
-      - 'android-builder-base'
+# TODO Temp debug
+#    depends_on:
+#      - 'publish-js'
+#      - 'android-builder-base'
     trigger: 'bugsnag-js-react-native'
     build:
       branch: '${BUILDKITE_BRANCH}'

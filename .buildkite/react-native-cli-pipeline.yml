@@ -9,8 +9,10 @@ steps:
       docker-compose#v3.7.0:
         run: react-native-cli-tool-maze-runner
         use-aliases: true
+        verbose: true
     env:
       REACT_NATIVE_VERSION: "rn0_60"
+      NOTIFIER_VERSION: 7.5.3-ci-tms-add-cli-tests-to-pipeline.237c4c15b5
       DEBUG: true
 
   - label: ':runner: RN 0.61 CLI tests'
