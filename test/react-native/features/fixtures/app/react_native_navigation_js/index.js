@@ -44,6 +44,10 @@ export default class AppScreen extends Component {
     this.state.scenarioMetaData = newScenarioMetaData
   }
 
+  timeout (ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
+  }
+
   startScenario = () => {
     console.log(`Running scenario: ${this.state.currentScenario}`)
     console.log(`  with MetaData: ${this.state.scenarioMetaData}`)
@@ -54,7 +58,7 @@ export default class AppScreen extends Component {
     const scenario = new Scenarios[scenarioName](configuration, scenarioMetaData, jsConfig)
     console.log(`  with config: ${JSON.stringify(configuration)} (native) and ${jsConfig} (js)`)
     NativeModules.BugsnagTestInterface.startBugsnag(configuration)
-      .then(() => {
+      .then(async () => {
         Navigation.setRoot({
           root: {
             stack: {
@@ -70,6 +74,8 @@ export default class AppScreen extends Component {
         })
         Bugsnag.start(jsConfig)
         this.state.scenario = scenario
+        // The notifier needs a little time to synch to the native layer, otherwise flakes occur
+        await this.timeout(2000)
         scenario.run()
       })
   }
