@@ -95,6 +95,7 @@ steps:
       - 'android-builder-image'
     timeout_in_minutes: 15
     env:
+      DEBUG: true
       REACT_NATIVE_VERSION: rn0_61
     plugins:
       - docker-compose#v3.7.0:
@@ -108,6 +109,7 @@ steps:
       - 'android-builder-image'
     timeout_in_minutes: 15
     env:
+      DEBUG: true
       REACT_NATIVE_VERSION: rn0_62
     plugins:
       - docker-compose#v3.7.0:
@@ -121,6 +123,7 @@ steps:
       - 'android-builder-image'
     timeout_in_minutes: 15
     env:
+      DEBUG: true
       REACT_NATIVE_VERSION: rn0_63
     plugins:
       - docker-compose#v3.7.0:
@@ -128,16 +131,17 @@ steps:
     artifact_paths:
       - build/rn0_63.apk
 
-#  - label: ':ios: Init and build RN 0.60 ipa'
-#    key: 'rn-0-60-ipa'
-#    timeout_in_minutes: 30
-#    agents:
-#      queue: 'opensource-mac-rn'
-#    env:
-#      REACT_NATIVE_VERSION: rn0_60
-#    artifact_paths: build/rn0_60.ipa
-#    commands:
-#      - npm run test:build-react-native-cli-ios
+  - label: ':ios: Init and build RN 0.60 ipa'
+    key: 'rn-0-60-ipa'
+    timeout_in_minutes: 30
+    agents:
+      queue: 'opensource-mac-rn'
+    env:
+      DEBUG: true
+      REACT_NATIVE_VERSION: rn0_60
+    artifact_paths: build/rn0_60.ipa
+    commands:
+      - npm run test:build-react-native-cli-ios
 #
 #  - label: ':ios: Init and build RN 0.61 ipa'
 #    key: 'rn-0-61-ipa'
