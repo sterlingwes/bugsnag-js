@@ -1,5 +1,6 @@
 package com.rn0_63;
 
+import com.bugsnag.android.Bugsnag;
 import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
@@ -42,6 +43,7 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
+    Bugsnag.start(this);
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }

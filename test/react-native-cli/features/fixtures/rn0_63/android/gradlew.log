@@ -1,0 +1,109 @@
+Downloading https://services.gradle.org/distributions/gradle-6.2-all.zip
+.............10%.............20%.............30%..............40%.............50%.............60%.............70%..............80%.............90%.............100%
+Starting a Gradle Daemon (subsequent builds will be faster)
+> Task :app:generatePackageList
+> Task :app:preBuild
+> Task :app:preReleaseBuild
+> Task :bugsnag_react-native:preBuild UP-TO-DATE
+> Task :bugsnag_react-native:preReleaseBuild UP-TO-DATE
+> Task :bugsnag_react-native:packageReleaseRenderscript NO-SOURCE
+> Task :app:checkReleaseManifest
+> Task :app:generateReleaseBuildConfig
+> Task :bugsnag_react-native:checkReleaseManifest
+> Task :bugsnag_react-native:generateReleaseBuildConfig
+> Task :bugsnag_react-native:compileReleaseAidl NO-SOURCE
+> Task :app:compileReleaseAidl NO-SOURCE
+> Task :app:compileReleaseRenderscript NO-SOURCE
+> Task :bugsnag_react-native:compileReleaseRenderscript NO-SOURCE
+> Task :bugsnag_react-native:generateReleaseResValues
+> Task :bugsnag_react-native:generateReleaseResources
+> Task :bugsnag_react-native:packageReleaseResources
+> Task :bugsnag_react-native:parseReleaseLibraryResources
+> Task :app:createReleaseCompatibleScreenManifests
+> Task :app:mainApkListPersistenceRelease
+> Task :bugsnag_react-native:processReleaseManifest
+> Task :app:bundleReleaseJsAndAssets
+warning: the transform cache was reset.
+                 Welcome to React Native!
+                Learn once, write anywhere
+
+
+info Writing bundle output to:, /Users/steve/git/bugsnag-js/test/react-native-cli/features/fixtures/rn0_63/android/app/build/generated/assets/react/release/index.android.bundle
+info Writing sourcemap output to:, /Users/steve/git/bugsnag-js/test/react-native-cli/features/fixtures/rn0_63/android/app/build/generated/sourcemaps/react/release/index.android.bundle.map
+info Done writing bundle output
+info Done writing sourcemap output
+info Copying 4 asset files
+info Done copying assets
+
+> Task :app:generateReleaseResValues
+> Task :app:generateReleaseResources
+> Task :app:processReleaseManifest
+> Task :app:processBugsnagReleaseManifest
+> Task :bugsnag_react-native:generateReleaseRFile
+> Task :bugsnag_react-native:compileReleaseKotlin
+> Task :app:mergeReleaseResources
+> Task :app:processReleaseResources
+> Task :bugsnag_react-native:javaPreCompileRelease
+> Task :bugsnag_react-native:compileReleaseJavaWithJavac
+> Task :app:mergeReleaseShaders
+> Task :app:compileReleaseShaders
+> Task :app:generateReleaseAssets
+> Task :bugsnag_react-native:mergeReleaseShaders
+> Task :bugsnag_react-native:compileReleaseShaders
+> Task :bugsnag_react-native:generateReleaseAssets
+> Task :bugsnag_react-native:packageReleaseAssets
+> Task :app:mergeReleaseAssets
+> Task :app:copyReleaseBundledJs
+> Task :bugsnag_react-native:bundleLibCompileRelease
+> Task :bugsnag_react-native:bundleLibRuntimeRelease
+> Task :app:javaPreCompileRelease
+> Task :app:compileReleaseJavaWithJavac
+> Task :app:checkReleaseDuplicateClasses
+> Task :app:transformClassesWithDexBuilderForRelease
+> Task :app:processReleaseJavaRes NO-SOURCE
+> Task :bugsnag_react-native:processReleaseJavaRes NO-SOURCE
+> Task :app:validateSigningRelease
+> Task :app:signingConfigWriterRelease
+> Task :bugsnag_react-native:bundleLibResRelease
+> Task :app:mergeReleaseJniLibFolders
+> Task :bugsnag_react-native:mergeReleaseJniLibFolders
+> Task :app:desugarReleaseFileDependencies
+> Task :app:compileReleaseSources
+> Task :app:prepareLintJar
+> Task :app:mergeReleaseJavaResource
+> Task :bugsnag_react-native:mergeReleaseNativeLibs
+> Task :bugsnag_react-native:prepareLintJarForPublish
+> Task :bugsnag_react-native:extractReleaseAnnotations
+> Task :bugsnag_react-native:mergeReleaseGeneratedProguardFiles
+> Task :bugsnag_react-native:mergeReleaseConsumerProguardFiles
+> Task :bugsnag_react-native:compileReleaseSources
+> Task :bugsnag_react-native:stripReleaseDebugSymbols
+> Task :bugsnag_react-native:transformNativeLibsWithIntermediateJniLibsForRelease
+> Task :bugsnag_react-native:transformNativeLibsWithSyncJniLibsForRelease
+
+> Task :app:lintVitalRelease
+Calling mockable JAR artifact transform to create file: /Users/steve/.gradle/caches/transforms-2/files-2.1/38becc80e2fa8074c3f66bf20a5be9be/android.jar with input /Users/steve/Library/Android/sdk/platforms/android-29/android.jar
+
+> Task :bugsnag_react-native:mergeReleaseJavaResource
+> Task :bugsnag_react-native:transformClassesAndResourcesWithSyncLibJarsForRelease
+> Task :bugsnag_react-native:bundleReleaseAar
+> Task :app:mergeExtDexRelease
+> Task :app:mergeReleaseNativeLibs
+> Task :app:stripReleaseDebugSymbols
+> Task :bugsnag_react-native:mergeReleaseResources
+> Task :app:mergeDexRelease
+> Task :app:packageRelease
+
+> Task :app:bugsnagReleaseReleaseTask
+Bugsnag: Uploading to Releases API
+
+> Task :app:assembleRelease
+> Task :bugsnag_react-native:verifyReleaseResources
+> Task :bugsnag_react-native:assembleRelease
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 18m 14s
+62 actionable tasks: 62 executed
