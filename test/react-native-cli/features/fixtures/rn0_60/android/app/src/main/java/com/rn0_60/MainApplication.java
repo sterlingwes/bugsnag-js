@@ -1,5 +1,6 @@
 package com.rn0_60;
 
+import com.bugsnag.android.Bugsnag;
 import android.app.Application;
 import android.util.Log;
 
@@ -43,6 +44,7 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
+    Bugsnag.start(this);
     SoLoader.init(this, /* native exopackage */ false);
   }
 }

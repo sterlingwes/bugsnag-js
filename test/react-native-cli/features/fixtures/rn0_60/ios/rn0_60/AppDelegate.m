@@ -1,3 +1,4 @@
+#import <Bugsnag/Bugsnag.h>
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -15,7 +16,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
+    [Bugsnag start];
+
+RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"rn0_60"
                                             initialProperties:nil];
