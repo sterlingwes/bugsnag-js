@@ -55,15 +55,15 @@ module.exports = {
 
     // JavaScript layer
     common.changeDir(`${targetDir}`)
-    common.run('npm install', true)
+    // common.run('npm install', true)
 
     // Install and run the CLI
-    const installCommand = `npm install bugsnag-react-native-cli@${version}`
-    common.run(installCommand, true)
+    // const installCommand = `npm install bugsnag-react-native-cli@${version}`
+    // common.run(installCommand, true)
 
     // Use Expect to run the init command interactively
     common.changeDir(`${initialDir}/${fixturesDir}`)
-    common.run(`./rn-cli-init-ios.sh ${version} ${rnVersion}`, true)
+    // common.run(`./rn-cli-init-ios.sh ${version} ${rnVersion}`, true)
 
     // Performing local build steps
     if (!fs.existsSync('./build-ios.sh')) {
