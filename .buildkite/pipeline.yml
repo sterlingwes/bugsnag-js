@@ -20,6 +20,7 @@ steps:
       - docker-compose#v3.7.0:
           build:
             - ci
+          no-cache: true
 
   - label:  ':docker: Build node maze runner image'
     key: "node-maze-runner-image"
@@ -31,6 +32,7 @@ steps:
       - docker-compose#v3.7.0:
           build:
             - node-maze-runner
+          no-cache: true
 
   - label:  ':docker: Build browser maze runner image'
     key: "browser-maze-runner-image"
@@ -42,6 +44,7 @@ steps:
       - docker-compose#v3.7.0:
           build:
             - browser-maze-runner
+          no-cache: true
 
   - label: ':docker: Build CLI test image'
     key: 'cli-maze-image'
@@ -50,3 +53,4 @@ steps:
     plugins:
       - docker-compose#v3.7.0:
           build: react-native-cli-tool-maze-runner
+          no-cache: true
