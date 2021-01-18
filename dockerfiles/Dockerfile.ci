@@ -11,8 +11,4 @@ RUN npm install
 COPY babel.config.js lerna.json .eslintignore .eslintrc.js jest.config.js tsconfig.json packages/expo/unimodules-core.d.ts ./
 ADD min_packages.tar .
 COPY bin ./bin
-RUN npx lerna bootstrap --concurrency 1
-COPY scripts ./scripts
-COPY test ./test
-COPY packages ./packages
-RUN npm run build
+RUN npx lerna bootstrap
