@@ -33,57 +33,67 @@ steps:
           build: publisher
           image-repository: 855461928731.dkr.ecr.us-west-1.amazonaws.com/js
 
+  - label: ':aws-lambda: AWS Lambda tests'
+    agents:
+      queue: 'opensource-mac-aws-sam-joe'
+    command: >-
+      npm --version &&
+      npm i &&
+      cd test/aws-lambda &&
+      bundle install &&
+      bundle exec maze-runner
+
   #
   # Trigger individual pipelines
   #
-  - label: 'Trigger Browser pipeline'
-    depends_on: 'package-js'
-    trigger: 'bugsnag-js-browser'
-    build:
-      branch: '${BUILDKITE_BRANCH}'
-      commit: '${BUILDKITE_COMMIT}'
-      message: '${BUILDKITE_MESSAGE}'
-    async: true
-
-  - label: 'Trigger Node pipeline'
-    depends_on: 'package-js'
-    trigger: 'bugsnag-js-node'
-    build:
-      branch: '${BUILDKITE_BRANCH}'
-      commit: '${BUILDKITE_COMMIT}'
-      message: '${BUILDKITE_MESSAGE}'
-    async: true
-
-  - label: 'Trigger Expo pipeline'
-    depends_on: 'publish-js'
-    trigger: 'bugsnag-js-expo'
-    build:
-      branch: '${BUILDKITE_BRANCH}'
-      commit: '${BUILDKITE_COMMIT}'
-      message: '${BUILDKITE_MESSAGE}'
-    async: true
-
-  - label: 'Trigger React Native pipeline'
-    depends_on:
-      - 'publish-js'
-      - 'android-builder-base'
-    trigger: 'bugsnag-js-react-native'
-    build:
-      branch: '${BUILDKITE_BRANCH}'
-      commit: '${BUILDKITE_COMMIT}'
-      message: '${BUILDKITE_MESSAGE}'
-    async: true
-
-  - label: 'Trigger React Native CLI pipeline'
-    depends_on:
-      - 'publish-js'
-      - 'android-builder-base'
-    trigger: 'bugsnag-js-react-native-cli'
-    build:
-      branch: '${BUILDKITE_BRANCH}'
-      commit: '${BUILDKITE_COMMIT}'
-      message: '${BUILDKITE_MESSAGE}'
-    async: true
+#  - label: 'Trigger Browser pipeline'
+#    depends_on: 'package-js'
+#    trigger: 'bugsnag-js-browser'
+#    build:
+#      branch: '${BUILDKITE_BRANCH}'
+#      commit: '${BUILDKITE_COMMIT}'
+#      message: '${BUILDKITE_MESSAGE}'
+#    async: true
+#
+#  - label: 'Trigger Node pipeline'
+#    depends_on: 'package-js'
+#    trigger: 'bugsnag-js-node'
+#    build:
+#      branch: '${BUILDKITE_BRANCH}'
+#      commit: '${BUILDKITE_COMMIT}'
+#      message: '${BUILDKITE_MESSAGE}'
+#    async: true
+#
+#  - label: 'Trigger Expo pipeline'
+#    depends_on: 'publish-js'
+#    trigger: 'bugsnag-js-expo'
+#    build:
+#      branch: '${BUILDKITE_BRANCH}'
+#      commit: '${BUILDKITE_COMMIT}'
+#      message: '${BUILDKITE_MESSAGE}'
+#    async: true
+#
+#  - label: 'Trigger React Native pipeline'
+#    depends_on:
+#      - 'publish-js'
+#      - 'android-builder-base'
+#    trigger: 'bugsnag-js-react-native'
+#    build:
+#      branch: '${BUILDKITE_BRANCH}'
+#      commit: '${BUILDKITE_COMMIT}'
+#      message: '${BUILDKITE_MESSAGE}'
+#    async: true
+#
+#  - label: 'Trigger React Native CLI pipeline'
+#    depends_on:
+#      - 'publish-js'
+#      - 'android-builder-base'
+#    trigger: 'bugsnag-js-react-native-cli'
+#    build:
+#      branch: '${BUILDKITE_BRANCH}'
+#      commit: '${BUILDKITE_COMMIT}'
+#      message: '${BUILDKITE_MESSAGE}'
+#    async: true
 
   #
   # Core tests and checks
