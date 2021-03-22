@@ -139,7 +139,7 @@ steps:
     key: 'rn-0-60-ipa'
     timeout_in_minutes: 30
     agents:
-      queue: 'opensource-mac-rn'
+      queue: 'opensource-mac-stadium-10.15'
     env:
       DEBUG: true
     artifact_paths: build/rn0_60.ipa
@@ -150,7 +150,7 @@ steps:
     key: 'rn-0-61-ipa'
     timeout_in_minutes: 30
     agents:
-      queue: 'opensource-mac-rn'
+      queue: 'opensource-mac-stadium-10.15'
     env:
       DEBUG: true
     artifact_paths: build/rn0_61.ipa
@@ -161,7 +161,7 @@ steps:
     key: 'rn-0-62-ipa'
     timeout_in_minutes: 30
     agents:
-      queue: 'opensource-mac-rn'
+      queue: 'opensource-mac-stadium-10.15'
     env:
       DEBUG: true
     artifact_paths: build/rn0_62.ipa
@@ -172,7 +172,7 @@ steps:
     key: 'rn-0-63-ipa'
     timeout_in_minutes: 30
     agents:
-      queue: 'opensource-mac-rn'
+      queue: 'opensource-mac-stadium-10.15'
     env:
       DEBUG: true
     artifact_paths: build/rn0_63.ipa

@@ -36,23 +36,23 @@ steps:
   #
   # Trigger individual pipelines
   #
-  - label: 'Trigger Browser pipeline'
-    depends_on: 'package-js'
-    trigger: 'bugsnag-js-browser'
-    build:
-      branch: '${BUILDKITE_BRANCH}'
-      commit: '${BUILDKITE_COMMIT}'
-      message: '${BUILDKITE_MESSAGE}'
-    async: true
+#  - label: 'Trigger Browser pipeline'
+#    depends_on: 'package-js'
+#    trigger: 'bugsnag-js-browser'
+#    build:
+#      branch: '${BUILDKITE_BRANCH}'
+#      commit: '${BUILDKITE_COMMIT}'
+#      message: '${BUILDKITE_MESSAGE}'
+#    async: true
 
-  - label: 'Trigger Node pipeline'
-    depends_on: 'package-js'
-    trigger: 'bugsnag-js-node'
-    build:
-      branch: '${BUILDKITE_BRANCH}'
-      commit: '${BUILDKITE_COMMIT}'
-      message: '${BUILDKITE_MESSAGE}'
-    async: true
+#  - label: 'Trigger Node pipeline'
+#    depends_on: 'package-js'
+#    trigger: 'bugsnag-js-node'
+#    build:
+#      branch: '${BUILDKITE_BRANCH}'
+#      commit: '${BUILDKITE_COMMIT}'
+#      message: '${BUILDKITE_MESSAGE}'
+#    async: true
 
   - label: 'Trigger Expo pipeline'
     depends_on: 'publish-js'
@@ -88,7 +88,7 @@ steps:
   - label: ':aws-lambda: AWS Lambda tests'
     timeout_in_minutes: 35
     agents:
-      queue: 'opensource-mac-aws-sam'
+      queue: 'opensource-mac-stadium-10.15'
     commands:
       # force the NPM registry as the default on CI is artifactory, which can't
       # currently install from our lockfile
