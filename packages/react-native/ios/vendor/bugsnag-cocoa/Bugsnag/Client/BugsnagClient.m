@@ -956,9 +956,7 @@ NSString *_lastOrientation = nil;
         [self.eventUploader storeEvent:event];
         // Replicate previous delivery mechanism's behaviour of waiting 1 second before delivering the event.
         // This should prevent potential duplicate uploads of unhandled errors where the app subsequently terminates.
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.eventUploader uploadStoredEvents];
-        });
+        [self.eventUploader uploadStoredEventsAfterDelay:1];
     } else {
         NSLog(@"%s adding handled event to upload queue", __PRETTY_FUNCTION__);
         [self.eventUploader uploadEvent:event completionHandler:nil];
