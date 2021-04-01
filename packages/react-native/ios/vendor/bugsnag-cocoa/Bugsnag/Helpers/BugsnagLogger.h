@@ -32,7 +32,7 @@
 #define BSG_LOGLEVEL_TRACE 50
 
 #ifndef BSG_LOG_LEVEL
-#define BSG_LOG_LEVEL BSG_LOGLEVEL_INFO
+#define BSG_LOG_LEVEL BSG_LOGLEVEL_DEBUG
 #endif
 
 #ifdef __OBJC__
