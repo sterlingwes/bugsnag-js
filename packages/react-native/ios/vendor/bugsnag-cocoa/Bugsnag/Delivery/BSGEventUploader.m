@@ -190,7 +190,6 @@
 
 - (void)storeEventPayload:(NSDictionary *)eventPayload {
     NSString *file = [[self.eventsDirectory stringByAppendingPathComponent:[NSUUID UUID].UUIDString] stringByAppendingPathExtension:@"json"];
-    NSLog(@"Storing event payload to %@", file);
     NSError *error = nil;
     if (![BSGJSONSerialization writeJSONObject:eventPayload toFile:file options:0 error:&error]) {
         bsg_log_err(@"Error encountered while saving event payload for retry: %@", error);

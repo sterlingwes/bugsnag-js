@@ -914,8 +914,6 @@ NSString *_lastOrientation = nil;
 - (void)notifyInternal:(BugsnagEvent *_Nonnull)event
                  block:(BugsnagOnErrorBlock)block
 {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-
     NSString *errorClass = event.errors.firstObject.errorClass;
     if ([self.configuration shouldDiscardErrorClass:errorClass]) {
         bsg_log_info(@"Discarding event because errorClass \"%@\" matched configuration.discardClasses", errorClass);
@@ -948,7 +946,6 @@ NSString *_lastOrientation = nil;
     }
 
     if (event.unhandled) {
-        NSLog(@"%s storing unhandled event", __PRETTY_FUNCTION__);
         // Unhandled Javscript exceptions from React Native result in the app being terminated shortly after the
         // call to notifyInternal, so the event needs to be persisted to disk for sending in the next session.
         // The fatal "RCTFatalException" / "Unhandled JS Exception" is explicitly ignored by
@@ -958,7 +955,6 @@ NSString *_lastOrientation = nil;
         // This should prevent potential duplicate uploads of unhandled errors where the app subsequently terminates.
         [self.eventUploader uploadStoredEventsAfterDelay:1];
     } else {
-        NSLog(@"%s adding handled event to upload queue", __PRETTY_FUNCTION__);
         [self.eventUploader uploadEvent:event completionHandler:nil];
     }
 
