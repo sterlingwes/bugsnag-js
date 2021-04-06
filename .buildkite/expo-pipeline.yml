@@ -76,7 +76,7 @@ steps:
           cache-from:
             - expo-android-builder:855461928731.dkr.ecr.us-west-1.amazonaws.com/js:expo-android-builder-latest
 
-  - label: ':docker: Build expo IPA'
+  - label: ':docker: Build expo IPA 1'
     key: "build-expo-ipa"
     depends_on:
       - "publish-expo-app"
@@ -86,6 +86,39 @@ steps:
     env:
       EXPO_RELEASE_CHANNEL: ${BUILDKITE_BUILD_ID}
     artifact_paths: build/output.ipa
+    commands:
+      - test/expo/scripts/build-ios.sh
+
+  - label: ':docker: Build expo IPA 2'
+    depends_on:
+      - "publish-expo-app"
+    timeout_in_minutes: 20
+    agents:
+      queue: "opensource-mac-expo"
+    env:
+      EXPO_RELEASE_CHANNEL: ${BUILDKITE_BUILD_ID}
+    commands:
+      - test/expo/scripts/build-ios.sh
+
+  - label: ':docker: Build expo IPA 3'
+    depends_on:
+      - "publish-expo-app"
+    timeout_in_minutes: 20
+    agents:
+      queue: "opensource-mac-expo"
+    env:
+      EXPO_RELEASE_CHANNEL: ${BUILDKITE_BUILD_ID}
+    commands:
+      - test/expo/scripts/build-ios.sh
+
+  - label: ':docker: Build expo IPA 4'
+    depends_on:
+      - "publish-expo-app"
+    timeout_in_minutes: 20
+    agents:
+      queue: "opensource-mac-expo"
+    env:
+      EXPO_RELEASE_CHANNEL: ${BUILDKITE_BUILD_ID}
     commands:
       - test/expo/scripts/build-ios.sh
 

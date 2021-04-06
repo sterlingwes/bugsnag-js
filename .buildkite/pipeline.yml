@@ -36,23 +36,23 @@ steps:
   #
   # Trigger individual pipelines
   #
-  - label: 'Trigger Browser pipeline'
-    depends_on: 'package-js'
-    trigger: 'bugsnag-js-browser'
-    build:
-      branch: '${BUILDKITE_BRANCH}'
-      commit: '${BUILDKITE_COMMIT}'
-      message: '${BUILDKITE_MESSAGE}'
-    async: true
-
-  - label: 'Trigger Node pipeline'
-    depends_on: 'package-js'
-    trigger: 'bugsnag-js-node'
-    build:
-      branch: '${BUILDKITE_BRANCH}'
-      commit: '${BUILDKITE_COMMIT}'
-      message: '${BUILDKITE_MESSAGE}'
-    async: true
+#  - label: 'Trigger Browser pipeline'
+#    depends_on: 'package-js'
+#    trigger: 'bugsnag-js-browser'
+#    build:
+#      branch: '${BUILDKITE_BRANCH}'
+#      commit: '${BUILDKITE_COMMIT}'
+#      message: '${BUILDKITE_MESSAGE}'
+#    async: true
+#
+#  - label: 'Trigger Node pipeline'
+#    depends_on: 'package-js'
+#    trigger: 'bugsnag-js-node'
+#    build:
+#      branch: '${BUILDKITE_BRANCH}'
+#      commit: '${BUILDKITE_COMMIT}'
+#      message: '${BUILDKITE_MESSAGE}'
+#    async: true
 
   - label: 'Trigger Expo pipeline'
     depends_on: 'publish-js'
@@ -63,27 +63,27 @@ steps:
       message: '${BUILDKITE_MESSAGE}'
     async: true
 
-  - label: 'Trigger React Native pipeline'
-    depends_on:
-      - 'publish-js'
-      - 'android-builder-base'
-    trigger: 'bugsnag-js-react-native'
-    build:
-      branch: '${BUILDKITE_BRANCH}'
-      commit: '${BUILDKITE_COMMIT}'
-      message: '${BUILDKITE_MESSAGE}'
-    async: true
-
-  - label: 'Trigger React Native CLI pipeline'
-    depends_on:
-      - 'publish-js'
-      - 'android-builder-base'
-    trigger: 'bugsnag-js-react-native-cli'
-    build:
-      branch: '${BUILDKITE_BRANCH}'
-      commit: '${BUILDKITE_COMMIT}'
-      message: '${BUILDKITE_MESSAGE}'
-    async: true
+#  - label: 'Trigger React Native pipeline'
+#    depends_on:
+#      - 'publish-js'
+#      - 'android-builder-base'
+#    trigger: 'bugsnag-js-react-native'
+#    build:
+#      branch: '${BUILDKITE_BRANCH}'
+#      commit: '${BUILDKITE_COMMIT}'
+#      message: '${BUILDKITE_MESSAGE}'
+#    async: true
+#
+#  - label: 'Trigger React Native CLI pipeline'
+#    depends_on:
+#      - 'publish-js'
+#      - 'android-builder-base'
+#    trigger: 'bugsnag-js-react-native-cli'
+#    build:
+#      branch: '${BUILDKITE_BRANCH}'
+#      commit: '${BUILDKITE_COMMIT}'
+#      message: '${BUILDKITE_MESSAGE}'
+#    async: true
 
   - label: ':aws-lambda: AWS Lambda tests'
     timeout_in_minutes: 35
