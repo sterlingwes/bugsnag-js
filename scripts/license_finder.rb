@@ -6,7 +6,7 @@ paths += Dir.glob('packages/*/package.json')
 all_ok = true
 paths.each do |path|
   dir = path.delete_suffix('/package.json')
-  cmd = "license_finder --decisions-file=config/decisions.yml --enabled-package-managers=npm --project-path=#{dir}"
+  cmd = "license_finder -d --decisions-file=config/decisions.yml --enabled-package-managers=npm --project-path=#{dir}"
   puts "Running: #{cmd}"
   output = `#{cmd}`
   success = $? == 0
